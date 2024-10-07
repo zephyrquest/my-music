@@ -1,0 +1,124 @@
+project:
+  name: "MyMusic"
+
+artist:
+  name: "Razor Eleven"
+  country: "Switzerland"
+
+host:
+  name: "razoreleven.com"
+
+basePath:
+  albums: "/albums"
+
+albums:
+  - title: "December"
+    genres:
+      - "rock"
+      - "pop"
+    releaseDate: "14.02.2009"
+    type: "studio"
+    coverImagePath: "/december/razoreleven-december.webp"
+    tracks:
+      - title: "Save It"
+        number: 1
+        length: 183
+        audioPath: "/december/tracks/save-it.mp3"
+        lyricsPath: "/december/tracks/save-it.txt"
+      - title: "Ashes"
+        number: 2
+        length: 193
+        audioPath: "/december/tracks/ashes.mp3"
+        lyricsPath: "/december/tracks/ashes.txt"
+      - title: "We Escape"
+        number: 3
+        length: 172
+        audioPath: "/december/tracks/we-escape.mp3"
+        lyricsPath: "/december/tracks/we-escape.txt"
+      - title: "Alive"
+        number: 4
+        length: 211
+        audioPath: "/december/tracks/alive.mp3"
+        lyricsPath: "/december/tracks/alive.txt"
+      - title: "Out Of Reach"
+        number: 5
+        length: 207
+        audioPath: "/december/tracks/out-of-reach.mp3"
+        lyricsPath: "/december/tracks/out-of-reach.txt"
+      - title: "White Flag"
+        number: 6
+        length: 222
+        audioPath: "/december/tracks/white-flag.mp3"
+        lyricsPath: "/december/tracks/white-flag.txt"
+      - title: "None Of You Are Real"
+        number: 7
+        length: 242
+        audioPath: "/december/tracks/none-of-you-are-real.mp3"
+        lyricsPath: "/december/tracks/none-of-you-are-real.txt"
+      - title: "Blood Winter"
+        number: 8
+        length: 176
+        audioPath: "/december/tracks/blood-winter.mp3"
+        lyricsPath: "/december/tracks/blood-winter.txt"
+  - title: "Once An Exile"
+    genres:
+      - "rock"
+      - "pop"
+    releaseDate: "17.08.2012"
+    type: "studio"
+    coverImagePath: "/once-an-exile/razoreleven-onceanexile.webp"
+    tracks:
+      - title: "Once An Exile"
+        number: 1
+        length: 205
+        audioPath: "/once-an-exile/tracks/once-an-exile.mp3"
+        lyricsPath: "/once-an-exile/tracks/once-an-exile.txt"
+  - title: "The Hours Of Darkness"
+    genres:
+      - "rock"
+      - "pop"
+    releaseDate: "25.08.2014"
+    type: "studio"
+    coverImagePath: "/the-hours-of-darkness/razoreleven-thehoursofdarkness.webp"
+    tracks:
+      - title: "The Fires Rise"
+        number: 1
+        length: 203
+        audioPath: "/the-hours-of-darkness/tracks/the-fires-rise.mp3"
+        lyricsPath: "/the-hours-of-darkness/tracks/the-fires-rise.txt"
+      - title: "Night"
+        number: 2
+        length: 161
+        audioPath: "/the-hours-of-darkness/tracks/night.mp3"
+        lyricsPath: "/the-hours-of-darkness/tracks/night.txt"
+  - title: "Phantoms"
+    genres:
+      - "rock"
+      - "pop"
+    releaseDate: "27.04.2016"
+    type: "studio"
+    coverImagePath: "/phantoms/razoreleven-phantoms.jpg"
+    tracks:
+      - title: "Even as the Sun"
+        number: 1
+        length: 197
+        audioPath: "/phantoms/tracks/even-as-the-sun.mp3"
+        lyricsPath: "/phantoms/tracks/even-as-the-sun.txt"
+  - title: "Spectrum"
+    genres:
+      - "rock"
+      - "pop"
+    releaseDate: "28.12.2018"
+    type: "studio"
+    coverImagePath: "/spectrum/razoreleven-spectrum.jpg"
+    tracks:
+      - title: "Down to the Bone"
+        number: 1
+        length: 261
+        audioPath: "/spectrum/tracks/down-to-the-bone.mp3"
+        lyricsPath: "/phantoms/tracks/down-to-the-bone.txt"
+      - title: "Colour"
+        number: 2
+        length: 257
+        audioPath: "/spectrum/tracks/colour.mp3"
+        lyricsPath: "/phantoms/tracks/colour.txt"

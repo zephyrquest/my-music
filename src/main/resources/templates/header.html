@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/appStyles.css}" type="text/css">
+</head>
+<body>
+    <header>
+        <div id="header" class="container-fluid">
+            <div class="row align-items-stretch justify-content-end">
+                <a class="col fw-bold" th:classappend="${lang == 'en' ? 'd-none' : ''}"
+                   th:href="@{${#strings.startsWith(servletPath, '/' + lang) ?
+                    #strings.replace(servletPath, '/' + lang, '/en') : #strings.prepend(servletPath, '/en')}}"
+                   th:text="#{views.header.language.english}"></a>
+                <a class="col fw-bold" th:classappend="${lang == 'it' ? 'd-none' : ''}"
+                   th:href="@{${#strings.startsWith(servletPath, '/' + lang) ?
+                    #strings.replace(servletPath, '/' + lang, '/it') : #strings.prepend(servletPath, '/it')}}"
+                   th:text="#{views.header.language.italian}"></a>
+            </div>
+        </div>
+
+        <div id="headline" class="container text-center fst-italic" th:text="${artistName}"></div>
+    </header>
+</body>
+</html>

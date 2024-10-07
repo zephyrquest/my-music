@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+
+    <title>Title</title>
+    <style>
+        .row {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bg-body-secondary text-center">
+        <div class="row my-a">
+            <div class="col bg-dark-subtle">
+                A
+            </div>
+            <div class="col bg-dark-subtle">
+                B
+            </div>
+            <div class="col bg-dark-subtle" th:text="${variable}">
+                C
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${lang}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/appStyles.css}" type="text/css">
+
+</head>
+<body>
+    <nav>
+        <div id="navigationBar" class="container text-center bg-body-secondary fw-bold">
+            <div class="row align-items-stretch column-gap-2">
+                <a class="col pt-1 border-top border-bottom border-2 user-select-none link-underline-opacity-0"
+                   th:classappend="${navigationBarField == 'music' ?
+                   'link-dark border-dark': 'link-primary'}"
+                   th:href="@{'/' + ${lang} + ${musicUrl}}" th:text="#{views.navigationBar.item.music}"></a>
+                <a class="col pt-1 border-top border-bottom border-2 user-select-none link-underline-opacity-0"
+                   th:classappend="${navigationBarField == 'about' ?
+                   'link-dark border-dark': 'link-primary'}"
+                   th:href="@{'/' + ${lang} +${aboutUrl}}" th:text="#{views.navigationBar.item.about}"></a>
+            </div>
+        </div>
+
+        <script type="text/javascript" crossorigin="anonymous" th:src="@{/scripts/navigationBar.js}"></script>
+    </nav>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${lang}"
+      th:replace="~{master :: layout(~{::title},~{::main}, _)}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{views.navigationBar.item.music} + ' | ' + ${artistName}">Music</title>
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap-icons.min.css}" >
+    <link rel="stylesheet" th:href="@{/styles/appStyles.css}" type="text/css">
+</head>
+<body>
+    <main>
+        <div id="albumsContainer" class="container">
+            <div class="row row-cols-3 justify-content-start align-items-center">
+                <div class="col px-3 my-3"
+                    th:each="album : ${albums}">
+                    <a th:href="@{'/' + ${lang} + ${albumUrl + '/'
+                        + #strings.toLowerCase(album.title).replace(' ', '-')}}">
+                        <img th:src="@{${album.coverImagePath}}"
+                             th:alt="${album.title} + ' cover'" width="300" height="300">
+                    </a>
+                    <br>
+                    <a th:href="@{'/' + ${lang} + ${albumUrl + '/'
+                    + #strings.toLowerCase(album.title).replace(' ', '-')}}"
+                       th:text="${album.title}"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

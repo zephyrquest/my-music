@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${lang}"
+      th:replace="~{master :: layout(~{::title},~{::main}, _)}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{views.navigationBar.item.about} + ' | ' + ${artistName}">About</title>
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap-icons.min.css}" >
+    <link rel="stylesheet" th:href="@{/styles/appStyles.css}" type="text/css">
+</head>
+<body>
+    <main>
+        <div id="artistAboutContainer" class="container">
+            <div class="row row-cols-2">
+                <div class="col left-column">
+                    <h6 class="pt-3">
+                        <span th:text="#{artistInfo}"></span>
+                    </h6>
+                </div>
+                <div class="col right-column">
+                    <img th:src="@{/images/artist/unknown-person.jpg}"
+                         alt="artist name"
+                         width="400" height="300">
+                    <br>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+* {
+    font-family: Calibri, serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This ensures that the body takes at least the height of the viewport */
+    margin: 0;
+    background-image: url("../images/background/background1.avif");
+    background-repeat: repeat;
+}
+
+footer {
+    background-color: #333;
+    background-image: none;
+    color: #fff;
+    text-align: center;
+    /* Stick the footer to the bottom */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+main {
+    margin-bottom: 50px;
+}
+
+#header .row {
+    height: 15px;
+}
+
+#header .col {
+    font-size: 12px;
+    max-width: 60px;
+}
+
+#headline {
+    font-family: "Bernard MT Condensed", serif;
+    font-size: 48px;
+    padding: 10px;
+}
+
+#navigationBar.container {
+    max-width: 1005px;
+}
+
+#navigationBar .row {
+    height: 35px;
+}
+
+#navigationBar .col {
+    font-size: 16px;
+    max-width: 80px;
+    /*margin-left: 5px;
+    margin-right: 5px;*/
+}
+
+#albumsContainer.container {
+    max-width: 1005px;
+    min-height: 800px;
+    background-image: none;
+    background-color: white;
+    padding: 20px;
+}
+
+#albumDetailsContainer.container {
+    max-width: 1005px;
+    min-height: 800px;
+    background-image: none;
+    background-color: white;
+}
+
+#albumDetailsContainer .left-column {
+    padding-left: 20px;
+}
+
+#albumDetailsContainer .right-column {
+    padding-right: 20px;
+}
+
+.playButton {
+    cursor: pointer;
+}
+
+.pauseButton {
+    cursor: pointer;
+}
+
+#trackDetailsContainer.container {
+    max-width: 1005px;
+    min-height: 800px;
+    background-image: none;
+    background-color: white;
+}
+
+#trackDetailsContainer .left-column {
+    padding-left: 20px;
+}
+
+#trackDetailsContainer .right-column {
+    padding-right: 20px;
+}
+
+#trackDetailsContainer #lyricsContainer embed {
+    max-height: 1000px;
+    width: 500px;
+}
+
+#artistAboutContainer.container {
+    max-width: 1005px;
+    min-height: 800px;
+    background-image: none;
+    background-color: white;
+    padding: 20px;
+}
+
+#artistAboutContainer .left-column {
+    padding-left: 20px;
+}
+
+#artistAboutContainer .right-column {
+    padding-right: 20px;
+}

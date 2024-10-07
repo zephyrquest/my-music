@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:lang="${lang}"
+      th:replace="~{master :: layout(~{::title},~{::main}, _)}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${track.title} + ' | ' + ${artistName}">Track</title>
+    <link rel="stylesheet" th:href="@{/styles/bootstrap.min.css}" type="text/css">
+    <link rel="stylesheet" th:href="@{/styles/bootstrap-icons.min.css}" >
+    <link rel="stylesheet" th:href="@{/styles/appStyles.css}" type="text/css">
+</head>
+<body>
+<main>
+    <div id="trackDetailsContainer" class="container">
+        <div class="row row-cols-2">
+            <div class="col left-column">
+                <h2 class="pt-3" th:text="${track.title}">Title</h2>
+                <h6>
+                    <span th:text="#{from}">from</span>
+                    <span>
+                        <a th:href="@{'/' + ${lang} + ${albumUrl + '/' +
+                        #strings.toLowerCase(album.title).replace(' ', '-')}}"
+                           th:text="${album.title}"></a>
+                    </span>
+                    <span th:text="#{by}">by</span>
+                    <span>
+                        <a th:href="@{'/' + ${lang} + ${aboutUrl}}" th:text="${artistName}"></a>
+                    </span>
+                </h6>
+                <audio id="track" class="pt-3">
+                    <source th:src="@{${track.audioPath}}" type="audio/mpeg">
+                </audio>
+                <br>
+                <div id="lyricsContainer" class="pt-3 pb-3"
+                     th:attr="data-lyricsPath=@{${track.lyricsPath}}">
+                    <!--<embed th:src="@{${track.lyricsPath}}" type="text/txt">-->
+                </div>
+                <div class="pt-3 pb-5">
+                    <span th:text="#{from}">from</span>
+                    <span>
+                    <a th:href="@{'/' + ${lang} + ${albumUrl + '/' +
+                        #strings.toLowerCase(album.title).replace(' ', '-')}}"
+                       th:text="${album.title}"></a>
+                    ,
+                </span>
+                    <span th:text="#{released} + ' ' + #{${#strings.toLowerCase(album.releaseDate.month)}}
+                        + ' ' + ${album.releaseDate.dayOfMonth} + ', ' + ${album.releaseDate.year}">
+                </span>
+                </div>
+            </div>
+            <div class="col right-column text-end">
+                <img th:src="@{${album.coverImagePath}}"
+                     th:alt="${album.title} + ' cover'"
+                     width="400" height="400">
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" crossorigin="anonymous" th:src="@{/scripts/track.js}"></script>
+</main>
+</body>
+</html>
