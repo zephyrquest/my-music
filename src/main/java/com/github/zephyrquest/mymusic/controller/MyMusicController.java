@@ -23,9 +23,9 @@ public class MyMusicController {
     public static final String CTRL_ABOUT = "/about";
 
     //View
-    private static final String VIEW_TEST = "/test";
-    private static final String VIEW_MUSIC = "/music";
-    private static final String VIEW_ABOUT = "/about";
+    private static final String VIEW_TEST = "test";
+    private static final String VIEW_MUSIC = "music";
+    private static final String VIEW_ABOUT = "about";
 
     //Model
     public static final String MODEL_ARTIST_NAME = "artistName";

@@ -23,8 +23,8 @@ public class AlbumController {
     private static final String CTRL_TRACK = "/track";
 
     //View
-    private static final String VIEW_ALBUM = "/album";
-    private static final String VIEW_TRACK = "/track";
+    private static final String VIEW_ALBUM = "album";
+    private static final String VIEW_TRACK = "track";
 
     //Model
     private static final String MODEL_ALBUM = "album";

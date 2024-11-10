@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres-container:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - mymusic-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=9124
+      - POSTGRES_DB=db_mymusic
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mymusic-container:
+    image: busiedpandora/mymusic:0.1
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres-container:
+        condition: service_healthy
+
+volumes:
+  mymusic-data:
+    driver: local
