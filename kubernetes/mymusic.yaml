@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mymusic-deployment
+  labels:
+    app: mymusic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mymusic
+  template:
+    metadata:
+      labels:
+        app: mymusic
+    spec:
+      containers:
+        - name: mymusic-container
+          image: busiedpandora/mymusic:0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: postgres-url
+                  name: postgres-config
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  key: postgres-user
+                  name: postgres-secret
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: postgres-password
+                  name: postgres-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mymusic-service
+spec:
+  type: NodePort
+  selector:
+    app: mymusic
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 30101

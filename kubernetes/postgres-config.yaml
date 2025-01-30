@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+data:
+  # Spring Boot settings (used by the app)
+  postgres-url: jdbc:postgresql://postgres-service:5432/mymusic_db
+
+  # PostgreSQL's settings (used by the DB itself)
+  postgres-database: mymusic_db
